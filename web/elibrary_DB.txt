@@ -1,0 +1,35 @@
+
+CREATE DATABASE ElibraryDB;
+
+CREATE TABLE E_BOOK (
+    CALLNO varchar(225),
+    NAME varchar(225),
+    AUTHOR varchar(225),
+    PUBLISHER varchar(225),
+    QUANTITY int,
+    ISSUED int  
+);
+
+ALTER TABLE E_BOOK
+ADD CONSTRAINT E_BOOK_PK PRIMARY KEY (CALLNO);
+
+
+CREATE TABLE E_LIBRARIAN (
+    ID int,
+    NAME varchar(225),
+    PASSWORD varchar(225),
+    EMAIL varchar(225),
+    MOBILE int
+);
+
+ALTER TABLE E_LIBRARIAN
+ADD CONSTRAINT E_LIBRARIAN_PK PRIMARY KEY (ID);
+
+CREATE TABLE E_ISSUEBOOK (
+    CALLNO varchar(225) NOT NULL,
+    STUDENTID varchar(225) NOT NULL,
+    STUDENTNAME varchar(225),
+    STUDENTMOBILE int,
+    ISSUEDDATE date,
+    RETURNSTATUS varchar(225)
+);
